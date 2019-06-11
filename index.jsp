@@ -4,16 +4,16 @@
 <html>
 <head>
 <%
-
 Web w = new Web();
 List<String> nameList = new ArrayList<String>();
-int num = 0;
 %>
-<script type="text/javascript">
-function addItem()
+
+<script>
+var x = new Web()
+function addNumber()
 {
-	nameList.add(w.genName());
-	document.getElementById("list").innerHTML = w.displayItems(nameList);
+	x.num++;
+	document.getElementById('number').innerHTML = 'litterly any result';
 }
 </script>
 
@@ -34,13 +34,16 @@ table {
 </head>
 <body>
 
+<button onclick="addNumber()">Increase Number</button>
+<p><output id="number"></output></p>
+
 <table>
 
 <tr><td>Search:<form><input type="text" value="Enter Seach Here"></form></td></tr>
 
-<tr><td>Here's a button to Generate another item<br><button onclick="increaseNumber">Generate New Item</button></td></tr>
+<tr><td>Here's a button to Generate another item<br></td></tr>
 
-
+<tr><td></td></tr>
 <tr><td><%=w.testNameList(nameList,0)%></td></tr>
 <tr><td><%=w.testNameList(nameList,1)%></td></tr>
 <tr><td><%=w.testNameList(nameList,2)%></td></tr>
@@ -53,8 +56,6 @@ table {
 <tr><td><%=w.testNameList(nameList,9)%></td></tr>
 
 </table>
-
-<p id="list"></p>
 
 </body>
 </html>
