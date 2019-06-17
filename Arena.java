@@ -114,7 +114,6 @@ public class Arena extends JPanel{
 				myObjects[x][y] = new Object(0, 0, INIT_FOOD_SIZE, Color.yellow, ITEM_TYPE.YELLOW_FOOD);
 				break;
 			}
-			//myObjects[x][y] = new Object(0, 0, INIT_FOOD_SIZE, Color.yellow, false);
 			myObjects[x][y].x = y * (ITEM_SIZE + OFFSET) + OFFSET + (MAX_ITEM_SIZE - myObjects[x][y].size) / 2;
 			myObjects[x][y].y = x * (ITEM_SIZE + OFFSET) + OFFSET + (MAX_ITEM_SIZE - myObjects[x][y].size) / 2;
 		}
@@ -143,9 +142,7 @@ public class Arena extends JPanel{
 					myObjects[old_X][old_Y].size = MAX_ITEM_SIZE;
 			}
 			
-			//System.out.println(myObjects[old_X][old_Y].size);
-			//System.out.println(score);
-			//System.out.println(level);
+			
 		}
 			
 		
@@ -156,18 +153,15 @@ public class Arena extends JPanel{
 				deleteObject(old_X, old_Y);
 		}
 		
-		//System.out.println(myObjects[player_x][player_y].size);
 	}
 	
 	@Override
     public void paint(Graphics g){ // draw myPlayer
     	super.paint(g);
     	
-    	//System.out.println("got here 10");
     	for (Object[] row : myObjects) {
     		for (Object item : row) {
     			if (item != null) {
-    				//System.out.println("got here 9");
     				g.setColor(item.color);
         			g.fillOval(item.x, item.y, item.size, item.size);
     			}    			
@@ -234,7 +228,6 @@ public class Arena extends JPanel{
 	        	break;
         	}
         	
-        	//createObject(x, y, INIT_FOOD_SIZE, false);
             repaint();
           }
         });
