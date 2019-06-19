@@ -15,7 +15,16 @@ public class AddPageNumServlet extends HttpServlet
 	{	
 		int PageNumber = 0;
 		Cookie cookies[] = req.getCookies();
-		for(int i = 0; i<cookies.length; i++)
+		int length = 0;
+		try
+		{
+			length = cookies.length;
+		}
+		catch(Exception e)
+		{
+			length = 0;
+		}
+		for(int i = 0; i<length; i++)
 		{
 			if(cookies[i].getName().equals("Pg"))
 			{
